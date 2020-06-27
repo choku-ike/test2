@@ -13,7 +13,7 @@ exports.index = function(req, res, next) {
  * show employee details
  */
 exports.show = function(req, res, next) {
-  models.Employee.findById(req.params.id).then(employee => {
+  models.Employee.findAll({where: {id : req.params.id}}).then(employee => {
     res.json({ employee: employee });
   });
 };

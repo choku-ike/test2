@@ -30,7 +30,7 @@ class EmployeeDetail extends React.Component {
   }
 
   render() {
-    const attributes_array = ["name", "department", "gender", "birth", "joined_date", "payment", "note"].map((attr) =>
+    const attributes_array = ["name", "department", "gender", "birth", "joined_date", "pay", "note"].map((attr) =>
       { return {
         name: attr,
         val: this.state.employee[attr] ? this.state.employee[attr].toString() : '...loading'
