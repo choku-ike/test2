@@ -30,10 +30,11 @@ class EmployeeDetail extends React.Component {
   }
 
   render() {
+    //{ name : name, val : 値},{name: department, val : 値}…を返す。
     const attributes_array = ["name", "department", "gender", "birth", "joined_date", "pay", "note"].map((attr) =>
       { return {
         name: attr,
-        val: this.state.employee[attr] ? this.state.employee[attr].toString() : '...loading'
+        val: typeof this.state.employee[0] === "undefined" ? '...loading' : this.state.employee[0][attr].toString()
       } }
     );
     return (

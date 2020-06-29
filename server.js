@@ -35,6 +35,9 @@ app.get('/*', function(req, res) {
 });
 
 // catch 404 and forward to error handler
+// app.useの内容は設定した順に実行される。
+// 通常ここに来る前に処理は終わる。
+// このコードまで来てしまった = 何も見つからなかった　と思われる。
 app.use(function(req, res, next) {
   next(createError(404));
 });
